@@ -1,0 +1,91 @@
+.daypage {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.day-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.day-text {
+  margin-bottom: 20px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  position:relative;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(184, 44, 44, 0.6);
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.4s ease;
+  z-index: 2;
+}
+
+.video-container:hover .overlay {
+  height: 40%;
+}
+
+.description {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+
+.loading {
+    color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    box-shadow:0 0 9px blue 0 0 9x blue inset;
+}
+
+
+@keyframes Loading{
+    0%{
+
+    }
+    33%{
+
+    }
+
+
+}
+.video-container:hover .description {
+  opacity: 1;
+}

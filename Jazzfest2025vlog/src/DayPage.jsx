@@ -1,12 +1,20 @@
 const videoData = {
   1: {
-    videos: ["https://www.youtube.com/embed/abc123", "https://www.youtube.com/embed/def456"],
+    videos: [{src:"/src/65807-515379587_small.mp4", description:"Very cool concert with my friend"}, 
+    {src:"./nas.mp4", description:"Jazz masters"}],
     text: "Day 1 was packed with soul and fusion performances that kicked off the festival in style.",
   },
-//   2: {
+  2:  {
+    videos: [{src:"./nas.mp4", description:"Very cool concert with my friend"}, 
+    {src:"./nas.mp4", description:"Jazz masters"}],
+    text: "Day 1 was packed with soul and fusion performances that kicked off the festival in style.",
+  },
 
-//   },
-//   3: {
+  3: { 
+    videos: [{src:"./nas.mp4", description:"Very cool concert with my friend"}, 
+    {src:"./nas.mp4", description:"Jazz masters"}],
+    text: "Day 1 was packed with soul and fusion performances that kicked off the festival in style.",
+  },
 
 //   },
 
@@ -44,21 +52,19 @@ export default function DayPage({ day }) {
   const { videos, text } = videoData[day] || { videos: [], text: "No content yet." };
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Day {day} Highlights</h2>
-      <p className="mb-4">{text}</p>
-      <div className="grid gap-4">
-        {videos.map((url, i) => (
-          <iframe
-            key={i}
-            width="560"
-            height="315"
-            src={url}
-            title={`Video ${i + 1}`}
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-        ))}
+    <div className="daypage">
+      <h2 className="day-title">Day {day} Highlights</h2>
+      <p className="day-text">{text}</p>
+      <div className="videos">
+        {videos.map((video, i) => (
+          <div key = {i} className="video-grid">
+            <video className="video" src={video.src} controls/>
+            <div className="overlay">
+              <span className="description">{video.description}</span>
+              <div className="loading"></div>
+          </div>
+        </div>
+      ))}
       </div>
     </div>
   );

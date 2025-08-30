@@ -7,7 +7,10 @@ import jazzCat from './jazz-2025.jpg'
 export default function Home() {
   return (
     <div>
-      <h1 className="text-4xl font-bold mb-6">JazzFest 2025 Highlights</h1>
+      <div id="main-title">
+        <h1 className="text-4xl font-bold mb-6">JazzFest 2025 Highlights</h1>
+      </div>
+      <span className="body-page"></span>
       <Player
         autoplay
         loop

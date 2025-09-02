@@ -2,7 +2,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import musicNote from './Music notes.json';
-import jazzCat from './jazz-2025.jpg'
+import jazzCat from './assets/jazz-2025.jpg'
 
 export default function Home() {
   return (
@@ -25,5 +25,6 @@ export default function Home() {
         transition={{ repeat: Infinity, repeatType: "reverse", duration: 2 }}
       />
     </div>
+    
   );
 }

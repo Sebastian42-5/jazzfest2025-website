@@ -25,6 +25,7 @@ a:hover {
 
 #main-title {
   background-color: #133ae9;
+  border-radius: 8px;
 }
 
 body {
